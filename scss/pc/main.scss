@@ -20,6 +20,7 @@
           background-color: color #181a209e;
         }
         .container {
+          // app.scss + davomi...
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
@@ -339,7 +340,7 @@
       strong {
         color: #fff;
         font-family: $font;
-        font-size: 48xpx;
+        font-size: 48px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
