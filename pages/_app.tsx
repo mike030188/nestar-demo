@@ -21,3 +21,13 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 }
 // App-> (pageProps.ni)qolgan barcha pages routingda joylawgan filelarga tarqatmoqda props sifatida;
+
+// 1. Pages routing - birinchi _document private ssr iwga tuwib ohiri Client da tugedi iw
+// 2. App routing -> by default SSR bo`lib agar Hooklar integration kk bo`lsa "use-client"orqali ClIENT sidega otkaziladi
+
+/* SASS 
+1 - NESTED ichma ich
+2. Variable - $ syntax
+3. Mixin - not use
+
+*/
