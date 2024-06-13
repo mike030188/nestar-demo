@@ -6,21 +6,31 @@ import TrendProperties from "@/libs/components/homepage/TrendProperties";
 import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Stack } from "@mui/material";
 import { NextPage } from "next";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
 
 const Home: NextPage = () => {
-  return (
-    <Stack className={"home-page"}>
-      <TrendProperties />
-      <PopularProperties />
-      <Advertisement />
-      <TopProperties />
-      <TopAgents />
+  // DEVICE: MOBILE vs PC
+  const device = useDeviceDetect();
 
-      {/* <Stack>
+  if (device === "mobile") {
+    return <Stack>HOMEPAGE MOBILE</Stack>;
+  } else {
+    return (
+      <Stack className={"home-page"}>
+        <TrendProperties />
+        <PopularProperties />
+        <Advertisement />
+        <TopProperties />
+        <TopAgents />
+      </Stack>
+    );
+  }
+};
+
+export default withLayoutMain(Home);
+
+{
+  /* <Stack>
         <Stack className="container">Trend Properties</Stack>
       </Stack>
       <Stack>
@@ -35,9 +45,5 @@ const Home: NextPage = () => {
       <Stack>
         <Stack className="container">Top Agents</Stack>
       </Stack>
-    */}
-    </Stack>
-  );
-};
-
-export default withLayoutMain(Home);
+    */
+}

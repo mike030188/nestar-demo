@@ -1,10 +1,16 @@
 import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
+import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
 import { Stack, Container } from "@mui/material";
 
 const PropertyDetail = () => {
   // console.log("PROPERTYLIST COMPONENT - PAGES ROUTER");
+  const device = useDeviceDetect();
 
-  return <Container>PROPERTY DETAIL</Container>;
+  if (device === "mobile") {
+    return <Stack>PROPERTY DETAIL MOBILE</Stack>;
+  } else {
+    return <Container>PROPERTY DETAIL</Container>;
+  }
 };
 
 export default withLayoutBasic(PropertyDetail);
